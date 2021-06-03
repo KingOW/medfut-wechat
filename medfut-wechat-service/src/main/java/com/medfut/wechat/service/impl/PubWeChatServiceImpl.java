@@ -12,7 +12,6 @@ import com.medfut.wechat.service.PubWeChatService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 
@@ -36,7 +35,7 @@ public class PubWeChatServiceImpl implements PubWeChatService {
         }
         log.info("添加公众号信息:封装数据，并保存数据.");
         pubWeChat.AccountTypeName();
-        String accountId = "WCA_"+pubWeChat.getAccountType()+ UUIDUtils.getUUID("");
+        String accountId = "WCA_"+pubWeChat.getAccountTypeCode()+ UUIDUtils.getUUID("");
         PubWeChatDto pubWeChatDto = new PubWeChatDto();
         BeanUtils.copyProperties(pubWeChat,pubWeChatDto);
         try {
