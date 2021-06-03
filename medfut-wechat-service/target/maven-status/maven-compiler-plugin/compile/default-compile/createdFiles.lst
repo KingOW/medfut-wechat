@@ -1,0 +1,9 @@
+com/medfut/wechat/dao/mapper/UserWeChatMapper.class
+com/medfut/wechat/dao/dto/UserWeChatDto.class
+com/medfut/wechat/web/PubWeChatController.class
+com/medfut/wechat/dao/mapper/PubWeChatMapper.class
+com/medfut/wechat/service/impl/PubWeChatServiceImpl.class
+com/medfut/wechat/application/WeChatApplication.class
+com/medfut/wechat/service/PubWeChatService.class
+com/medfut/wechat/dao/dto/PubWeChatDto.class
+com/medfut/wechat/api/controller/PubWeChatController.class

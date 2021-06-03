@@ -1,0 +1,5 @@
+/Users/chenzhen/Documents/zchen-work/medfut-wechat/medfut-wechat-core/src/main/java/com/medfut/wechat/core/exceptions/WeChatException.java
+/Users/chenzhen/Documents/zchen-work/medfut-wechat/medfut-wechat-core/src/main/java/com/medfut/wechat/core/constants/WeChatAccountType.java
+/Users/chenzhen/Documents/zchen-work/medfut-wechat/medfut-wechat-core/src/main/java/com/medfut/wechat/core/model/WeChatAccount.java
+/Users/chenzhen/Documents/zchen-work/medfut-wechat/medfut-wechat-core/src/main/java/com/medfut/wechat/core/model/PubWeChat.java
+/Users/chenzhen/Documents/zchen-work/medfut-wechat/medfut-wechat-core/src/main/java/com/medfut/wechat/core/model/UserWeChat.java
