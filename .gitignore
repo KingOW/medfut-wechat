@@ -1,5 +1,7 @@
 .idea
-./medfut-wechat-core/target/*
-./medfut-wechat-service/target/*
+medfut-wechat-core/target/*
+medfut-wechat-service/target/*
+medfut-wechat-core/*.iml
+medfut-wechat-service/*.iml
 medfut-wechat.iml
 logs

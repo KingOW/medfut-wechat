@@ -1,5 +1,0 @@
-com/medfut/wechat/core/model/UserWeChat.class
-com/medfut/wechat/core/model/PubWeChat.class
-com/medfut/wechat/core/model/WeChatAccount.class
-com/medfut/wechat/core/constants/WeChatAccountType.class
-com/medfut/wechat/core/exceptions/WeChatException.class
