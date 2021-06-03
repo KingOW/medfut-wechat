@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: wechat-service
+  profiles:
+    active: dev
+
+server:
+  port: 81
+  servlet:
+    context-path: /wechat
+
+
+mybatis:
+  mapper-locations: classpath:mybatis/*Mapper.xml
+
+logging:
+  config: classpath:log2j.xml
+
+

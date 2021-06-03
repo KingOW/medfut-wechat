@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.medfut.wechat.dao.mapper.PubWeChatMapper">
+
+    <resultMap id="PubWeChatResultMap" type="com.medfut.wechat.dao.dto.PubWeChatDto">
+        <result property="accountId" column="ACCOUNT_ID"/>
+        <result property="pubWeChatNo" column="PUB_WECHAT_NO"/>
+        <result property="pubWeChatName" column="PUB_WECHAT_NAME"/>
+        <result property="accountTypeCode" column="ACCOUNT_TYPE_CODE"/>
+        <result property="accountTypeName" column="ACCOUNT_TYPE_NAME"/>
+    </resultMap>
+
+    <sql id="PubWeChatColSQL">
+        ACCOUNT_ID,
+        PUB_WECHAT_NO,
+        PUB_WECHAT_NAME,
+        ACCOUNT_TYPE_CODE,
+        ACCOUNT_TYPE_NAME
+    </sql>
+
+    <!--插入微信公众平台相关账号-->
+    <insert id="insertPubWeChat">
+
+
+    </insert>
+
+    <!--    查询微信公众平台根据账号id查询-->
+    <select id="selectPubWeChatById" resultMap="PubWeChatResultMap">
+        SELECT
+        <include refid="PubWeChatColSQL"/>
+        FROM PUB_WECHAT WHERE
+        1 = 1
+        AND ACCOUNT_ID = #{accountId,jdbcType=VARCHAR};
+    </select>
+
+    <select id="selectPubWeChatByNo" resultMap="PubWeChatResultMap">
+        SELECT
+        <include refid="PubWeChatColSQL"/>
+        FROM PUB_WECHAT WHERE
+        1 = 1
+        AND PUB_WECHAT_NO = #{pubWeChatNo};
+    </select>
+
+    <select id="selectPubWeChatByKey" resultMap="PubWeChatResultMap">
+        SELECT
+        <include refid="PubWeChatColSQL"/>
+        FROM PUB_WECHAT WHERE
+        1 = 1
+        AND ( ACCOUNT_ID = #{accountId,jdbcType=VARCHAR} OR PUB_WECHAT_NO = #{pubWeChatNo});
+    </select>
+</mapper>
