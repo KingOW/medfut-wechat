@@ -31,6 +31,38 @@ public class PubWeChatController {
         }
     }
 
+
+    /**
+     * 启用微信公众号
+     * @param weChatKey
+     * @return
+     */
+    @PutMapping("/{weChatKey}/en")
+    public ResultBean<String> enablePubWeChat(@PathVariable(value = "weChatKey") String weChatKey){
+
+        return null;
+
+    }
+
+    /**
+     * 禁用微信公众号
+     * @param weChatKey
+     * @return
+     */
+    @PutMapping("/{weChatKey}/dis")
+    public ResultBean<String> disablePubWeChat(@PathVariable(value = "weChatKey") String weChatKey){
+
+        return null;
+
+    }
+
+    @DeleteMapping("/{weChatKey}")
+    public ResultBean<String> deletePubWeChat(@PathVariable(value = "weChatKey") String weChatKey){
+
+        return null;
+
+    }
+
     /**
      * 查询微信公众账号信息：精确查询
      *
