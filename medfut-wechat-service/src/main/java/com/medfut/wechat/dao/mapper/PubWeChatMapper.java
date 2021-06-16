@@ -4,6 +4,8 @@ import com.medfut.wechat.dao.dto.PubWeChatDto;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
+
 @Repository(value = "pubWeChatMapper")
 public interface PubWeChatMapper {
 
@@ -41,6 +43,20 @@ public interface PubWeChatMapper {
     PubWeChatDto selectPubWeChatByKey(@Param(value = "weChatKey")String weChatKey)throws Exception;
 
 
+    /**
+     * 更新公众号状态
+     * @param weChatKey
+     * @param accountStatus
+     * @param updateUser
+     * @param updateTime
+     * @return
+     * @throws Exception
+     */
+    int updatePubWeChatStatus(@Param(value = "weChatKey")String weChatKey,
+                              @Param(value = "accountStatus")int accountStatus,
+                              @Param(value = "updateUser")String updateUser,
+                              @Param(value = "updateTime") LocalDateTime updateTime
+                              )throws Exception;
 
 
 }

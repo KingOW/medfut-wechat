@@ -94,6 +94,10 @@
         </dependency>
         <dependency>
             <groupId>com.medfut</groupId>
+            <artifactId>medfut-service-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.medfut</groupId>
             <artifactId>medfut-wechat-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

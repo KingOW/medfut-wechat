@@ -16,4 +16,7 @@ mybatis:
 logging:
   config: classpath:log2j.xml
 
+service:
+  num: 1
+
 

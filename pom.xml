@@ -63,6 +63,7 @@
         <maven.deploy.snapshot.repository.url>http://10.0.0.250:8081/nexus/content/repositories/snapshots/</maven.deploy.snapshot.repository.url>
 
         <com.medfut.common.version>1.0-SNAPSHOT</com.medfut.common.version>
+        <com.medfut.boot.starter.version>1.0-SNAPSHOT</com.medfut.boot.starter.version>
     </properties>
 
     <dependencyManagement>
@@ -228,6 +229,12 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${org.projectlombok.lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.medfut</groupId>
+                <artifactId>medfut-service-boot-starter</artifactId>
+                <version>${com.medfut.boot.starter.version}</version>
             </dependency>
 
             <dependency>

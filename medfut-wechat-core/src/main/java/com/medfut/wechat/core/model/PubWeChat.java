@@ -1,6 +1,5 @@
 package com.medfut.wechat.core.model;
 
-import com.medfut.common.beans.BaseBean;
 import com.medfut.wechat.core.constants.WeChatAccountType;
 import lombok.Data;
 

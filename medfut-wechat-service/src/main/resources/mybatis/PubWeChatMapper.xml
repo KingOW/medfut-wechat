@@ -6,25 +6,49 @@
 
     <resultMap id="PubWeChatResultMap" type="com.medfut.wechat.dao.dto.PubWeChatDto">
         <result property="accountId" column="ACCOUNT_ID"/>
+        <result property="accountStatus" column="ACCOUNT_STATUS"/>
         <result property="pubWeChatNo" column="PUB_WECHAT_NO"/>
         <result property="pubWeChatName" column="PUB_WECHAT_NAME"/>
         <result property="accountTypeCode" column="ACCOUNT_TYPE_CODE"/>
         <result property="accountTypeName" column="ACCOUNT_TYPE_NAME"/>
+        <result property="remark" column="REMARK"/>
     </resultMap>
 
     <sql id="PubWeChatColSQL">
         ACCOUNT_ID,
+        ACCOUNT_STATUS,
         PUB_WECHAT_NO,
         PUB_WECHAT_NAME,
         ACCOUNT_TYPE_CODE,
-        ACCOUNT_TYPE_NAME
+        ACCOUNT_TYPE_NAME,
+        REMARK
     </sql>
 
     <!--插入微信公众平台相关账号-->
     <insert id="insertPubWeChat">
-
+      INSERT INTO PUB_WECHAT(<include refid="PubWeChatColSQL"/>,CREATE_USER,CREATE_TIME,UPDATE_USER,UPDATE_TIME)
+      VALUES (
+            #{pubWeChat.accountId,jdbcType=VARCHAR},
+            #{pubWeChat.accountStatus,jdbcType=INTEGER},
+            #{pubWeChat.pubWeChatNo,jdbcType=VARCHAR},
+            #{pubWeChat.pubWeChatName,jdbcType=VARCHAR},
+            #{pubWeChat.accountTypeCode,jdbcType=INTEGER},
+            #{pubWeChat.accountTypeName,jdbcType=VARCHAR},
+            #{pubWeChat.remark,jdbcType=VARCHAR},
+            #{pubWeChat.createUser,jdbcType=VARCHAR},
+            #{pubWeChat.createTime,jdbcType=TIMESTAMP},
+            #{pubWeChat.updateUser,jdbcType=VARCHAR},
+            #{pubWeChat.updateTime,jdbcType=TIMESTAMP}
+        );
 
     </insert>
+    <update id="updatePubWeChatStatus">
+     UPDATE PUB_WECHAT  SET ACCOUNT_STATUS = #{accountStatus,jdbcType=INTEGER},
+                            UPDATE_USER =  #{updateUser,jdbcType=VARCHAR},
+                            UPDATE_TIME =  #{updateTime,jdbcType=TIMESTAMP}
+            WHERE 1 = 1
+                 AND  ( ACCOUNT_ID = #{weChatKey,jdbcType=VARCHAR} OR PUB_WECHAT_NO = #{weChatKey,jdbcType=VARCHAR});
+    </update>
 
     <!--    查询微信公众平台根据账号id查询-->
     <select id="selectPubWeChatById" resultMap="PubWeChatResultMap">
@@ -40,7 +64,8 @@
         <include refid="PubWeChatColSQL"/>
         FROM PUB_WECHAT WHERE
         1 = 1
-        AND PUB_WECHAT_NO = #{pubWeChatNo};
+        AND PUB_WECHAT_NO = #{pubWeChatNo}
+        ;
     </select>
 
     <select id="selectPubWeChatByKey" resultMap="PubWeChatResultMap">
@@ -48,6 +73,6 @@
         <include refid="PubWeChatColSQL"/>
         FROM PUB_WECHAT WHERE
         1 = 1
-        AND ( ACCOUNT_ID = #{accountId,jdbcType=VARCHAR} OR PUB_WECHAT_NO = #{pubWeChatNo});
+        AND ( ACCOUNT_ID = #{weChatKey,jdbcType=VARCHAR} OR PUB_WECHAT_NO = #{weChatKey,jdbcType=VARCHAR});
     </select>
 </mapper>

@@ -24,4 +24,28 @@ public interface PubWeChatService {
      * @throws WeChatException
      */
     ResultBean<PubWeChat> queryPubWeChatByKey(String weChatKey)throws WeChatException;
+
+    /**
+     * 启用公众号
+     * @param weChatKey
+     * @return
+     * @throws WeChatException
+     */
+    ResultBean<String> enablePubWeChat(String weChatKey)throws WeChatException;
+
+    /**
+     * 禁用公众号
+     * @param weChatKey
+     * @return
+     * @throws WeChatException
+     */
+    ResultBean<String> disablePubWeChat(String weChatKey)throws WeChatException;
+
+    /**
+     * 删除公众号
+     * @param weChatKey
+     * @return
+     * @throws WeChatException
+     */
+    ResultBean<String> deletePubWeChat(String weChatKey)throws WeChatException;
 }

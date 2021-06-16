@@ -7,7 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.core.SpringVersion;
 
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"com.medfut"})
 @MapperScan(value ="com.medfut.wechat.dao.mapper")
 public class WeChatApplication {
     public static void main(String[] args) {
