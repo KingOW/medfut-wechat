@@ -18,5 +18,7 @@ logging:
 
 service:
   num: 1
+  code: wechat-service
+  name: 微信服务
 
 

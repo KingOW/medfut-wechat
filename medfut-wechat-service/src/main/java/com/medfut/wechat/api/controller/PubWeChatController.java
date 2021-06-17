@@ -2,6 +2,7 @@ package com.medfut.wechat.api.controller;
 
 import com.medfut.common.beans.ResultBean;
 import com.medfut.common.enums.ResultStatus;
+import com.medfut.service.model.ServiceInfo;
 import com.medfut.wechat.core.exceptions.WeChatException;
 import com.medfut.wechat.core.model.PubWeChat;
 import com.medfut.wechat.service.PubWeChatService;
@@ -16,6 +17,8 @@ import javax.annotation.Resource;
 @RestController
 public class PubWeChatController {
 
+    @Resource(name = "serviceInfo")
+    private ServiceInfo serviceInfo;
     /**
      * 微信公众平台账号服务
      */
@@ -79,6 +82,7 @@ public class PubWeChatController {
     @GetMapping("/{weChatKey}")
     public ResultBean<PubWeChat> queryPubWeChat(@PathVariable(value = "weChatKey") String weChatKey) {
         try {
+            serviceInfo.getCode();
             return this.pubWeChatService.queryPubWeChatByKey(weChatKey);
         } catch (WeChatException e) {
             return new ResultBean<PubWeChat>(false, ResultStatus.SERVER_ERROR.getCode(), "查询微信公众账号失败:服务器出现异常.");
